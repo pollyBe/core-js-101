@@ -9,9 +9,9 @@
  ******************************************************************************************* */
 
 /**
- * Returns an area of a rectangle given by width and height.
+ * Returns an area of a rectangle given by width and heigth.
  *
- * @param {number} width
+ * @param {numder} width
  * @param {number} height
  * @return {number}
  *
@@ -34,13 +34,14 @@ function getRectangleArea(width, height) {
  *   3.14 => 19.729201864543903
  *   0    => 0
  */
-function getCircleCircumference(radius) {
+function getCicleCircumference(radius) {
   return radius * Math.PI * 2;
 }
 
 /**
  * Returns an average of two given numbers.
  *
+ * @param {numder} value1
  * @param {numder} value1
  * @param {number} value2
  * @return {number}
@@ -55,6 +56,7 @@ function getAverage(value1, value2) {
 }
 
 /**
+ * Returns a distance beetween two points by cartesian coordinates.
  * Returns a distance beetween two points by cartesian coordinates.
  *
  * @param {number} x1
@@ -157,7 +159,7 @@ function parseNumberFromString(value) {
  *   3,3,3   => 5.196152422706632
  *   1,2,3   => 3.741657386773941
  */
-function getParallelepipedDiagonal(a, b, c) {
+function getParallelipidedDiagonal(a, b, c) {
   return Math.sqrt(a ** 2 + b ** 2 + c ** 2);
 }
 
@@ -209,6 +211,7 @@ function isPrime(n) {
 
 /**
  * Tries to convert value to number and returns it if conversion was successfull;
+ * Tries to convert value to number and returns it if conversion was successfull;
  * otherwise returns default value passed as a second argument.
  *
  * @param {any} value
@@ -228,14 +231,14 @@ function toNumber(value, def) {
 
 module.exports = {
   getRectangleArea,
-  getCircleCircumference,
+  getCicleCircumference,
   getAverage,
   getDistanceBetweenPoints,
   getLinearEquationRoot,
   getAngleBetweenVectors,
   getLastDigit,
   parseNumberFromString,
-  getParallelepipedDiagonal,
+  getParallelipidedDiagonal,
   roundToPowerOfTen,
   isPrime,
   toNumber,

@@ -1,11 +1,11 @@
+/* eslint-disable linebreak-style */
 /* eslint-disable prefer-template */
 /* *******************************************************************************************
  *                                                                                           *
- * Please read the following tutorial before implementing tasks:                              *
+ * Plese read the following tutorial before implementing tasks:                              *
  * https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String   *
  *                                                                                           *
  ******************************************************************************************* */
-
 
 /**
  * Returns the result of concatenation of two strings.
@@ -20,9 +20,8 @@
  *   '',  'bb'  => 'bb'
  */
 function concatenateStrings(value1, value2) {
-  return value1.concat(value2);
+  return value1 + value2;
 }
-
 
 /**
  * Returns the length of given string.
@@ -70,7 +69,6 @@ function extractNameFromTemplate(value) {
   const match = value.match(/Hello, (.+?)!/);
   return match ? match[1] : '';
 }
-
 
 /**
  * Returns a first char of the given string.
@@ -147,7 +145,6 @@ function unbracketTag(str) {
   return str.slice(1, -1);
 }
 
-
 /**
  * Converts all characters of the specified string into the upper case
  *
@@ -212,7 +209,6 @@ function getRectangleString(width, height) {
   return top + middle.repeat(height - 2) + bottom;
 }
 
-
 /**
  * Encode specified string with ROT13 cipher
  * See details:  https://en.wikipedia.org/wiki/ROT13
@@ -228,11 +224,10 @@ function getRectangleString(width, height) {
  *   'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz'
  *    => 'NOPQRSTUVWXYZABCDEFGHIJKLMnopqrstuvwxyzabcdefghijklm'
  *
- */
-function encodeToRot13(str) {
-  let alphabet = ['abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'];
-
-}
+//  */
+// function encodeToRot13(//str) {
+//   // let alphabet = ['abcdefghijklmnopqrstuvwxyz', 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'];
+// }
 
 /**
  * Returns true if the value is string; otherwise false.
@@ -247,10 +242,9 @@ function encodeToRot13(str) {
  *   isString('test') => true
  *   isString(new String('test')) => true
  */
-function isString(/* value */) {
-  throw new Error('Not implemented');
+function isString(value) {
+  return value instanceof String || typeof value === 'string';
 }
-
 
 /**
  * Returns playid card id.
@@ -276,10 +270,23 @@ function isString(/* value */) {
  *   'Q♠' => 50
  *   'K♠' => 51
  */
-function getCardId(/* value */) {
-  throw new Error('Not implemented');
+function getCardId(value) {
+  const map = {
+    '♣': 0,
+    '♦': 13,
+    '♥': 26,
+    '♠': 39,
+    A: 0,
+    J: 10,
+    Q: 11,
+    K: 12,
+  };
+  const tmpValue = value.slice(0, value.length - 1);
+  return (
+    (tmpValue in map ? map[tmpValue] : +tmpValue - 1) +
+    map[value.slice(value.length - 1)]
+  );
 }
-
 
 module.exports = {
   concatenateStrings,
@@ -294,7 +301,7 @@ module.exports = {
   convertToUpperCase,
   extractEmails,
   getRectangleString,
-  encodeToRot13,
+  // encodeToRot13,
   isString,
   getCardId,
 };
