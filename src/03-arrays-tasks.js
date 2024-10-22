@@ -1,3 +1,6 @@
+/* eslint-disable no-continue */
+/* eslint-disable no-plusplus */
+/* eslint-disable linebreak-style */
 /* ********************************************************************************************
  *                                                                                            *
  * Please read the following tutorial before implementing tasks:                               *
@@ -35,8 +38,12 @@ function findElement(/* arr, value */) {
  *    2 => [ 1, 3 ]
  *    5 => [ 1, 3, 5, 7, 9 ]
  */
-function generateOdds(/* len */) {
-  throw new Error('Not implemented');
+function generateOdds(len) {
+  const odds = [];
+  for (let i = 0; i < len; i++) {
+    odds.push(2 * i + 1);
+  }
+  return odds;
 }
 
 
