@@ -1,3 +1,6 @@
+/* eslint-disable implicit-arrow-linebreak */
+/* eslint-disable comma-dangle */
+/* eslint-disable max-len */
 /* eslint-disable no-continue */
 /* eslint-disable no-plusplus */
 /* eslint-disable linebreak-style */
@@ -456,8 +459,10 @@ function sortCitiesArray(arr) {
  *           [0,0,0,0,1]]
  */
 function getIdentityMatrix(n) {
-  return Array.from({ length: n }, (a, i) =>
-    Array.from({ length: n }, (b, j) => (j === i ? 1 : 0))
+  return Array.from(
+    { length: n },
+    (a, i) => Array.from({ length: n }, (b, j) => (j === i ? 1 : 0))
+    // eslint-disable-next-line function-paren-newline
   );
 }
 
